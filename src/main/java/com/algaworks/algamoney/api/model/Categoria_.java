@@ -1,4 +1,4 @@
-package com.algaworks.algamoney.api.model.metamodel;
+package com.algaworks.algamoney.api.model;
 
 import com.algaworks.algamoney.api.model.Categoria;
 

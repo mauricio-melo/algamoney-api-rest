@@ -5,6 +5,7 @@ import com.algaworks.algamoney.api.model.TipoLancamento;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 public class ResumoLancamento {
 
     private Long codigo;

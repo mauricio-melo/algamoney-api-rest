@@ -1,15 +1,10 @@
-package com.algaworks.algamoney.api.model.metamodel;
+package com.algaworks.algamoney.api.model;
 
-import com.algaworks.algamoney.api.model.Categoria;
-import com.algaworks.algamoney.api.model.Lancamento;
-import com.algaworks.algamoney.api.model.Pessoa;
-import com.algaworks.algamoney.api.model.TipoLancamento;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
 @StaticMetamodel(Lancamento.class)

@@ -12,6 +12,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.algaworks.algamoney.api.config.property.AlgamoneyApiProperty;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -27,6 +29,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 @ControllerAdvice
 public class RefreshTokenPostProcessor implements ResponseBodyAdvice<OAuth2AccessToken>{
     //OAuth2AccessToken é o objeto que o Ouath retorna contendo as informações no localhost:8095/oauth/token(JSON)
+
+    @Autowired
+    private AlgamoneyApiProperty algamoneyApiProperty;
 
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
@@ -61,7 +66,7 @@ public class RefreshTokenPostProcessor implements ResponseBodyAdvice<OAuth2Acces
         //so quero que ele seja acessivo em http
         refreshTokenCookie.setHttpOnly(true);
         //Deve funcionar somente em https?
-        refreshTokenCookie.setSecure(false); // TODO: Mudar para true em producao
+        refreshTokenCookie.setSecure(algamoneyApiProperty.getSeguranca().isEnableHttps());
         //pra qual caminho o cookie deverá ser enviado pelo browser
         refreshTokenCookie.setPath(req.getContextPath() + "/oauth/token");
         //em quanto tempo esse cookie ira inspirar em dias

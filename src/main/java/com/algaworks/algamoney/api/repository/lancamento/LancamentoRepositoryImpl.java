@@ -11,9 +11,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import com.algaworks.algamoney.api.model.metamodel.Categoria_;
-import com.algaworks.algamoney.api.model.metamodel.Lancamento_;
-import com.algaworks.algamoney.api.model.metamodel.Pessoa_;
+import com.algaworks.algamoney.api.model.Categoria_;
+import com.algaworks.algamoney.api.model.Lancamento_;
+import com.algaworks.algamoney.api.model.Pessoa_;
 import com.algaworks.algamoney.api.repository.projection.ResumoLancamento;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
