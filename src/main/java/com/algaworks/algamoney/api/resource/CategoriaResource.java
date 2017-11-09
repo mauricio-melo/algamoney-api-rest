@@ -25,7 +25,6 @@ public class CategoriaResource {
     @Autowired
     private CategoriaRepository categoriaRepository;
 
-
     @Autowired
     private ApplicationEventPublisher publisher;
 
