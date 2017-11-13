@@ -63,8 +63,7 @@ public class AutorizationServerConfig extends AuthorizationServerConfigurerAdapt
         endpoints
                 //onde aarmazenar  o token
                 .tokenStore(tokenStore())
-                //conversor de token
-                .accessTokenConverter(accessTokenConverter())
+                .tokenEnhancer(tokenEnhancerChain)
                 //sempre que eu pedir um novo access token, um novo sera enviado(refresh token nao expira, caso esteja sendo usado)
                 .reuseRefreshTokens(false)
                 //validar se esta tudo certo com o usuario e senha
