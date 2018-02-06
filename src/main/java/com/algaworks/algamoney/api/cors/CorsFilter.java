@@ -17,6 +17,8 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+
+
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CorsFilter implements Filter {
@@ -31,7 +33,7 @@ public class CorsFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
-        response.setHeader("Access-Control-Allow-Origin", algamoneyApiProperty.getOriginPermitida();
+        response.setHeader("Access-Control-Allow-Origin", algamoneyApiProperty.getOriginPermitida());
         response.setHeader("Access-Control-Allow-Credentials", "true");
 
         if ("OPTIONS".equals(request.getMethod()) && algamoneyApiProperty.getOriginPermitida().equals(request.getHeader("Origin"))) {
