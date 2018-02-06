@@ -5,22 +5,25 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("algamoney")
 public class AlgamoneyApiProperty {
 
-    private String originPermitida = "http://localhost:4200";
-    public final Seguranca seguranca = new Seguranca();
+    private String originPermitida = "http://localhost:8000";
 
-    public String getOrigemPermitida() {
-        return originPermitida;
-    }
-
-    public void setOrigemPermitida(String origemPermitida) {
-        this.originPermitida = origemPermitida;
-    }
+    private final Seguranca seguranca = new Seguranca();
 
     public Seguranca getSeguranca() {
         return seguranca;
     }
 
-    public static class Seguranca{
+    public String getOriginPermitida() {
+        return originPermitida;
+    }
+
+    public void setOriginPermitida(String originPermitida) {
+        this.originPermitida = originPermitida;
+    }
+
+    public static class Seguranca {
+
+        private boolean enableHttps;
 
         public boolean isEnableHttps() {
             return enableHttps;
@@ -30,8 +33,6 @@ public class AlgamoneyApiProperty {
             this.enableHttps = enableHttps;
         }
 
-        private boolean enableHttps;
-
     }
-}
 
+}
